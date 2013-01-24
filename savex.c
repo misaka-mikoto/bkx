@@ -9,6 +9,6 @@ int saveBK(char *routeChar)
 		ERROR(4);
 	else
 	{
-		printf("OK\n");
+		fileCopy(routeChar,"./textfile");
 	}
 }
