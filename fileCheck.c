@@ -26,6 +26,18 @@ int isFileCanRead(char *route)
 	}		
 }
 
+int isFileCanWrite(char *route)
+{
+        if(access(route,W_OK)==0)
+        {
+                return 1;
+        }
+        else
+        {
+                return 0;
+        }
+}
+
 int isDirectory(char *route)
 {
 	struct stat fileInfo;

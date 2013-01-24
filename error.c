@@ -20,6 +20,8 @@ void ERROR(int errNum)
 		case 5:
 			printf("Target doesn't exist!");
 			break;
+		case 6:
+			printf("Copy Error!");
 		}
 	printf("\n");
 }
