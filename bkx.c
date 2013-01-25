@@ -23,7 +23,7 @@ main(int argc, char *argv[])
 			case 's':
 				filePath=realpath(optarg,NULL);
 				//printf("%s\n",filePath);
-				saveBK(absolutePath);
+				saveBK(filePath);
 				break;
 			case 'r':
 				filePath=realpath(optarg,NULL);

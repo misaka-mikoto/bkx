@@ -16,6 +16,9 @@ int saveBK(char *filePath)
 		ERROR(7);
 	else
 	{
-		printf(filePath);
+		char *a=varyAdd(filePath);
+		printf("%s\n",a);
+		char *b=varySub("/usr/local/share/bkx_backup_directory/home/ikaros/bkx/iox.c");
+		printf("%s\n",b);
 	}
 }
