@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-int saveBK(char *routeChar)
+int saveBK(char *filePath)
 {
 	char *bkDir;
 	bkDir="/usr/local/share/bkx_backup_directory";
-	if(!isFileExist(routeChar))
+	if(!isFileExist(filePath))
 		ERROR(5);
-	else if(!isFileCanRead(routeChar))
+	else if(!isFileCanRead(filePath))
 		ERROR(3);
-	else if(isDirectory(routeChar))
+	else if(isDirectory(filePath))
 		ERROR(4);
 	else if(!isFileExist(bkDir))
 		ERROR(8);
@@ -16,6 +16,6 @@ int saveBK(char *routeChar)
 		ERROR(7);
 	else
 	{
-		printf("ok");
+		printf(filePath);
 	}
 }

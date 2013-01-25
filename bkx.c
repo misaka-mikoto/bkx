@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <getopt.h>
-char *parameter;
+#include <limits.h>
+#include <stdlib.h>
+
+char *filePath;
 char* const shortOptions = "s:r:h";
 struct option longOptions[] = {
 	{"help", 0, NULL, 'h' },
@@ -18,12 +21,13 @@ main(int argc, char *argv[])
 			switch (c)
 			{
 			case 's':
-				parameter=optarg;
-				saveBK(parameter);
+				filePath=realpath(optarg,NULL);
+				//printf("%s\n",filePath);
+				saveBK(absolutePath);
 				break;
 			case 'r':
-				parameter=optarg;
-				printf("%s\n",parameter);
+				filePath=realpath(optarg,NULL);
+				printf("%s\n",filePath);
 				break;
 			case 'h':
 				printf("help\n");
