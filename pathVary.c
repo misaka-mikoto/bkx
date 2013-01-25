@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-char *bkDir="/usr/local/share/bkx_backup_directory";
-
 char *varyAdd(char *filePath)
 {
 	static char cachePath[]="/usr/local/share/bkx_backup_directory";
@@ -13,7 +11,7 @@ char *varyAdd(char *filePath)
 char *varySub(char *filePath)
 {
 	static char cachePath[1024];
-	int x1=0,x2=strlen(bkDir);
+	int x1=0,x2=strlen("/usr/local/share/bkx_backup_directory");
 	while(filePath[x1]!='\0')
 	{
 		cachePath[x1]=filePath[x1];
