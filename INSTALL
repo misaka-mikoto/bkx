@@ -1,0 +1,6 @@
+How to install BKX
+==
+1、Temporary login by superuser.
+2、make
+3、make install
+4、exit superuser.
