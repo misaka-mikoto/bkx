@@ -18,21 +18,26 @@ main(int argc, char *argv[])
 	{
 		while ((c=getopt_long (argc, argv, shortOptions, longOptions, NULL))!=-1)
 		{
-			switch (c)
-			{
-			case 's':
-				filePath=realpath(optarg,NULL);
-				//printf("%s\n",filePath);
-				saveBK(filePath);
-				break;
-			case 'r':
-				filePath=realpath(optarg,NULL);
-				printf("%s\n",filePath);
-				break;
-			case 'h':
-				printf("help\n");
-				break;
-			}
+				switch (c)
+				{
+				case 's':
+					if(isFileExist(optarg))
+					{
+						filePath=realpath(optarg,NULL);
+						save(filePath);
+					}
+					else ERROR(5);
+					break;
+				case 'r':
+					if(!isFileExist(optarg))
+					mkdir(optarg);
+					filePath=realpath(optarg,NULL);
+					reply(filePath);
+					break;
+				case 'h':
+					printf("help\n");
+					break;
+				}
 		}
 	}
 	return 0;

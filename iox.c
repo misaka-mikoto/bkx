@@ -21,9 +21,8 @@ int makeDir(char *filePath)
 
 int fileCopy(char *sorceFile,char *targetFile)
 {
-	printf("1");
 	FILE *sF,*oF;
-	char buffer[1024];
+	char buffer[1024]={0};
 	int len;
 	makeDir(targetFile);
 	if((sF=fopen(sorceFile,"r"))==NULL)

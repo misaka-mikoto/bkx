@@ -10,7 +10,7 @@ char *varyAdd(char *filePath)
 
 char *varySub(char *filePath)
 {
-	static char cachePath[1024];
+	static char cachePath[1024]={0};
 	int x1=0,x2=strlen("/usr/local/share/bkx_backup_directory");
 	while(filePath[x1]!='\0')
 	{
@@ -27,7 +27,7 @@ char *varySub(char *filePath)
 
 char *pathDir(char *filePath)
 {
-	static char cachePath[1024];
+	static char cachePath[1024]={0};
 	int x1=0,x2=0;
 	while(filePath[x1]!='\0')
 	{

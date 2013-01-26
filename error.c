@@ -24,13 +24,16 @@ void ERROR(int errNum)
 			printf("Copy Error!");
 			break;
 		case 7:
-			printf("Backup directory error! Plz use super user.");
+			printf("Plz use super user.");
 			break;
 		case 8:
 			printf("Please create the backup file directory yourself.(/usr/local/share/bkx_backup_directory)");
 			break;
 		case 9:
 			printf("File delete error!");
+			break;
+		case 10:
+			printf("reply error!");
 			break;
 		}
 	printf("\n");
