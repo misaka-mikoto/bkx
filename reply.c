@@ -3,7 +3,7 @@
 int reply(char *sourcePath)
 {
         char *bkDir="/usr/local/share/bkx_backup_directory";
-        char *backupPath=varyAdd(sourcePath);
+        char *backupPath=backupPath=varyAdd(sourcePath);
         printf("Backup Dir:%s\nReply Dir:%s\n",backupPath,sourcePath);
 	if(!isFileExist(backupPath)) //测试备份文件是否存在
                 ERROR(10);

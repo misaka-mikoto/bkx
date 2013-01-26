@@ -6,7 +6,7 @@ void ERROR(int errNum)
 	switch (errNum)
 		{
 		case 1:
-			printf("Please input the file route after parameter, or input 'bkx --help' for help.");
+			printf("Please input file path after parameter, or input 'bkx --help' for help.");
 			break;
 		case 2:
 			printf("Please don't input more then one parameter, or input 'bkx --help' for help.");

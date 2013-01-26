@@ -13,6 +13,7 @@ main(int argc, char *argv[])
 {
 	int c;
 	if(argc>3) ERROR(2);
+	else if(argc<2) ERROR(1);
 	else
 	{
 		while ((c=getopt_long (argc, argv, shortOptions, longOptions, NULL))!=-1)
