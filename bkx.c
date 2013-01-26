@@ -13,7 +13,6 @@ main(int argc, char *argv[])
 {
 	int c;
 	if(argc>3) ERROR(2);
-	else if(argc<3&&argv[1]!="h") ERROR(1);
 	else
 	{
 		while ((c=getopt_long (argc, argv, shortOptions, longOptions, NULL))!=-1)
@@ -35,7 +34,7 @@ main(int argc, char *argv[])
 					reply(filePath);
 					break;
 				case 'h':
-					printf("help\n");
+					help();
 					break;
 				}
 		}
