@@ -4,6 +4,8 @@ int saveBK(char *filePath)
 {
 	char *bkDir;
 	bkDir="/usr/local/share/bkx_backup_directory";
+	char *targetPath=varyAdd(filePath);
+	char *targetDir=
 	if(!isFileExist(filePath))
 		ERROR(5);
 	else if(!isFileCanRead(filePath))
@@ -14,11 +16,17 @@ int saveBK(char *filePath)
 		ERROR(8);
 	else if(!isDirectory(bkDir)||!isFileCanWrite(bkDir))
 		ERROR(7);
+	else if(!isFileExist())
+		
+//	else if(isFileExist(targetPath))
+//	{
+//		if(remove(targetPath)==-1)
+//			ERROR(9);
+//	}
 	else
 	{
-		char *a=varyAdd(filePath);
-		printf("%s\n",a);
-		char *b=varySub("/usr/local/share/bkx_backup_directory/home/ikaros/bkx/iox.c");
-		printf("%s\n",b);
+		        printf("1");
+		if(fileCopy(filePath,targetPath))
+			printf("Copy sucess!\n");
 	}
 }

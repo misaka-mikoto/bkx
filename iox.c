@@ -3,10 +3,16 @@
 
 int fileCopy(char *sorceFile,char *targetFile)
 {
+	printf("1");
 	FILE *sF,*oF;
 	char buffer[1024];
+	char *targetDir=pathDir(targetFile);
 	int len;
-	if((sF=fopen(sorceFile,"r"))==NULL)
+	if(!isFileExist(targetDir))
+	{
+		
+	}
+	else if((sF=fopen(sorceFile,"r"))==NULL)
 	{
 		ERROR(6);	
 	}

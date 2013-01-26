@@ -29,6 +29,9 @@ void ERROR(int errNum)
 		case 8:
 			printf("Please create the backup file directory yourself.(/usr/local/share/bkx_backup_directory)");
 			break;
+		case 9:
+			printf("File delete error!");
+			break;
 		}
 	printf("\n");
 }
