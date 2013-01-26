@@ -1,18 +1,32 @@
 #include <stdio.h>
 #include <memory.h>
 
+int makeDir(char *filePath)
+{
+	char cachePath[1024]={0};
+	int i=0;
+	while(filePath[i]!='\0')
+	{
+        	cachePath[i]=filePath[i];
+        	if(filePath[i+1]=='/')
+         		if(!isFileExist(cachePath))
+			{
+                		mkdir(cachePath);
+                		printf("MKDIR:%s\n",cachePath);
+          		}
+        		i++;
+	}
+	return 1;
+}
+
 int fileCopy(char *sorceFile,char *targetFile)
 {
 	printf("1");
 	FILE *sF,*oF;
 	char buffer[1024];
-	char *targetDir=pathDir(targetFile);
 	int len;
-	if(!isFileExist(targetDir))
-	{
-		
-	}
-	else if((sF=fopen(sorceFile,"r"))==NULL)
+	makeDir(targetFile);
+	if((sF=fopen(sorceFile,"r"))==NULL)
 	{
 		ERROR(6);	
 	}

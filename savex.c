@@ -5,7 +5,6 @@ int saveBK(char *filePath)
 	char *bkDir;
 	bkDir="/usr/local/share/bkx_backup_directory";
 	char *targetPath=varyAdd(filePath);
-	char *targetDir=
 	if(!isFileExist(filePath))
 		ERROR(5);
 	else if(!isFileCanRead(filePath))
@@ -16,13 +15,13 @@ int saveBK(char *filePath)
 		ERROR(8);
 	else if(!isDirectory(bkDir)||!isFileCanWrite(bkDir))
 		ERROR(7);
-	else if(!isFileExist())
+//	else if(!isFileExist())
 		
-//	else if(isFileExist(targetPath))
-//	{
-//		if(remove(targetPath)==-1)
-//			ERROR(9);
-//	}
+	else if(isFileExist(targetPath))
+	{
+		if(remove(targetPath)==-1)
+			ERROR(9);
+	}
 	else
 	{
 		        printf("1");
