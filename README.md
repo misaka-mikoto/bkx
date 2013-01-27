@@ -7,7 +7,7 @@ BKX文件备份小工具，它可以帮助你备份有用文件！
 
 使用方法：
 
-1、使用ROOT权限执行make和make install命令；
+1、使用ROOT权限执行make和make install命令完成安装，完毕后就可以使用bkx命令控制备份和恢复动作；
 
 2、需要备份的时候使用bkx命令加-s参数再加上备份文件的源路径，比如：bkx -s /etc/samba/smb.conf；
 
