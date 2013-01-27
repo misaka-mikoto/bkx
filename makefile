@@ -20,14 +20,14 @@ iox.o:./src/iox.c
 pathVary.o:./src/pathVary.c
 	gcc -c ./src/pathVary.c
 reply.o:./src/reply.c
-	gcc -c ./src/reply.c
+	gcc -w -c ./src/reply.c
 savex.o:./src/savex.c
-	gcc -c ./src/savex.c
+	gcc -w -c ./src/savex.c
 install:
 	cp ./bkx /usr/bin
 	mkdir /usr/local/share/bkx_backup_directory
 clean:
 	rm -f ./*.o
 remove:
-	rm -f /usr/local/bkx
+	rm -f /usr/bin/bkx
 	rm -rf /usr/local/share/bkx_backup_directory

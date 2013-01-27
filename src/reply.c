@@ -20,7 +20,7 @@ int reply(char *sourcePath)
 {
         char *bkDir="/usr/local/share/bkx_backup_directory";
         char *backupPath=varyAdd(sourcePath);
-        printf("Backup Dir:%s\nReply Dir:%s\n",backupPath,sourcePath);
+        printf("Backup Path:%s\nReply Path:%s\n",backupPath,sourcePath);
 	if(!isFileExist(backupPath)) //测试备份文件是否存在
                 ERROR(10);
         else if(!isFileCanRead(backupPath)) //测试备份文件是否有读权限

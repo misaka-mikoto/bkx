@@ -20,7 +20,7 @@ int save(char *filePath)
 {
 	char *bkDir="/usr/local/share/bkx_backup_directory";
 	char *targetPath=varyAdd(filePath);
-	printf("Source Dir:%s\nBackup Dir:%s\n",filePath,targetPath);
+	printf("Source Path:%s\nBackup Path:%s\n",filePath,targetPath);
 	if(!isFileExist(filePath)) //测试源文件是否存在
 		ERROR(5);
 	else if(!isFileCanRead(filePath)) //测试源文件是否有读写权限
