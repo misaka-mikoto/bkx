@@ -35,8 +35,8 @@ main(int argc, char *argv[])
 	{
 		while ((opt=getopt_long (argc, argv, shortOptions, longOptions, NULL))!=-1)
 		{
-				switch (opt)
-				{
+			switch (opt)
+			{
 				case 's':
 					if(isFileExist(optarg))
 					{
@@ -54,8 +54,8 @@ main(int argc, char *argv[])
 				case 'h':
 					help();
 					break;
-				}
-				tempVar++;
+			}
+			tempVar++;
 		}
 		if(tempVar==0) ERROR(1);
 	}
