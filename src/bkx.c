@@ -17,7 +17,6 @@
 #include <stdio.h>
 #include <getopt.h>
 #include <limits.h>
-#include <stdlib.h>
 
 char *filePath;
 char* const shortOptions = "s:r:h";
@@ -29,6 +28,7 @@ main(int argc, char *argv[])
 {
 	int opt;
 	int tempVar=0;
+	printf("\n%d\n",sizeof(argv[1]));
 	if(argc>3) ERROR(2);
 	else if(argc<2) ERROR(1);
 	else
@@ -47,7 +47,7 @@ main(int argc, char *argv[])
 					break;
 				case 'r':
 					if(!isFileExist(optarg))
-					mkdir(optarg);
+						mkdir(optarg);
 					filePath=realpath(optarg,NULL);
 					reply(filePath);
 					break;
