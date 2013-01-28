@@ -18,6 +18,7 @@
 #include <getopt.h>
 #include <limits.h>
 #include <stdlib.h>
+#include <string.h>
 
 char *filePath;
 char* const shortOptions = "s:r:h";
@@ -31,6 +32,7 @@ main(int argc, char *argv[])
 	int tempVar=0;
 	if(argc>3) ERROR(2);
 	else if(argc<2) ERROR(1);
+	else if(strlen(argv[1])>2) ERROR(2);
 	else
 	{
 		while ((opt=getopt_long (argc, argv, shortOptions, longOptions, NULL))!=-1)
