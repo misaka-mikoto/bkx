@@ -28,6 +28,7 @@ install:
 	mkdir /usr/local/share/bkx_backup_directory
 clean:
 	rm -f ./*.o
+	rm -f ./bkx
 remove:
 	rm -f /usr/bin/bkx
 	rm -rf /usr/local/share/bkx_backup_directory

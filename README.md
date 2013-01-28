@@ -1,4 +1,4 @@
-BKX file backup tool 1.0.1
+BKX file backup tool 1.0.2
 ==
 
 It can help me to backup the useful file!

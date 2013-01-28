@@ -28,7 +28,7 @@ int makeDir(char *filePath)
          		if(!isFileExist(cachePath))
 			{
                 		mkdir(cachePath);
-                		printf("MKDIR:%s\n",cachePath);
+//                		printf("MKDIR:%s\n",cachePath);
           		}
         		i++;
 	}

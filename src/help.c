@@ -18,5 +18,5 @@
 
 int help()
 {
-	printf("-s <source path>\n-r <reply path>\n");
+	printf("Backup file:\n-s <source path>\nReply file:\n-r <original path>\n");
 }

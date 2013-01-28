@@ -27,14 +27,15 @@ struct option longOptions[] = {
 
 main(int argc, char *argv[])
 {
-	int c;
+	int opt;
+	int tempVar=0;
 	if(argc>3) ERROR(2);
 	else if(argc<2) ERROR(1);
 	else
 	{
-		while ((c=getopt_long (argc, argv, shortOptions, longOptions, NULL))!=-1)
+		while ((opt=getopt_long (argc, argv, shortOptions, longOptions, NULL))!=-1)
 		{
-				switch (c)
+				switch (opt)
 				{
 				case 's':
 					if(isFileExist(optarg))
@@ -54,7 +55,9 @@ main(int argc, char *argv[])
 					help();
 					break;
 				}
+				tempVar++;
 		}
+		if(tempVar==0) ERROR(1);
 	}
 	return 0;
 }
