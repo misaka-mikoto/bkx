@@ -29,7 +29,6 @@ main(int argc, char *argv[])
 {
 	int opt;
 	int tempVar=0;
-	printf("\n%d\n",sizeof(argv[1]));
 	if(argc>3) ERROR(2);
 	else if(argc<2) ERROR(1);
 	else
