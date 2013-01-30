@@ -20,6 +20,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+int isEmptyFileExist=0;
 char *filePath;
 char* const shortOptions = "s:r:h";
 struct option longOptions[] = {
@@ -49,8 +50,13 @@ main(int argc, char *argv[])
 					break;
 				case 'r':
 					if(!isFileExist(optarg))
+					{
 						mkdir(optarg);
+						isEmptyFileExist=1;
+					}
 					filePath=realpath(optarg,NULL);
+					if(isEmptyFileExist) remove(filePath);
+					//realpath()函数必须使用真实存在的路径，而空文件会导致出错。
 					reply(filePath);
 					break;
 				case 'h':

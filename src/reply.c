@@ -16,16 +16,6 @@
 
 #include <stdio.h>
 
-int tempDel(char *filePath)
-{
-	if(isFileExist(filePath))
-	{
-		remove(filePath);
-		return 1;
-	}
-	return 0;
-}
-
 int reply(char *sourcePath)
 {
         char *bkDir="/usr/local/share/bkx_backup_directory";
@@ -34,17 +24,14 @@ int reply(char *sourcePath)
 	if(!isFileExist(backupPath)) //测试备份文件是否存在
         {
 		ERROR(10);
-		tempDel(sourcePath);
 	}
         else if(!isFileCanRead(backupPath)) //测试备份文件是否有读权限
         {
 		ERROR(7);
-		tempDel(sourcePath);
 	}
         else if(isDirectory(backupPath)) //测试备份件是否一个目录
         {
 		ERROR(10);
-		tempDel(sourcePath);
 	}
         else
         {
