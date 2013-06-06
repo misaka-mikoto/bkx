@@ -19,15 +19,15 @@ int save(char *filePath)
 {
 	char *bkDir="/usr/local/share/bkx_backup_directory";
 	char *targetPath=varyAdd(filePath);
-	if(!isFileExist(filePath)) //测试源文件是否存在
+	if(!isFileExist(filePath))
 		ERROR(5);
-	else if(!isFileCanRead(filePath)) //测试源文件是否有读写权限
+	else if(!isFileCanRead(filePath))
 		ERROR(3);
-	else if(isDirectory(filePath)) //测试源文件是否一个目录
+	else if(isDirectory(filePath))
 		ERROR(4);
-	else if(!isFileExist(bkDir)) //测试备份目录是否存在
+	else if(!isFileExist(bkDir))
 		ERROR(8);
-	else if(!isDirectory(bkDir)||!isFileCanWrite(bkDir)) //测试备份目录是否可写
+	else if(!isDirectory(bkDir)||!isFileCanWrite(bkDir))
 		ERROR(7);	
 	else
 	{
@@ -37,6 +37,8 @@ int save(char *filePath)
                         	ERROR(9);
         	}
 		if(fileCopy(filePath,targetPath))
-			exit(1);
+		{
+			exit(0);
+		}
 	}
 }

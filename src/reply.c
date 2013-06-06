@@ -20,15 +20,15 @@ int reply(char *sourcePath)
 {
         char *bkDir="/usr/local/share/bkx_backup_directory";
         char *backupPath=varyAdd(sourcePath);
-	if(!isFileExist(backupPath)) //测试备份文件是否存在
+	if(!isFileExist(backupPath))
         {
 		ERROR(10);
 	}
-        else if(!isFileCanRead(backupPath)) //测试备份文件是否有读权限
+        else if(!isFileCanRead(backupPath))
         {
 		ERROR(7);
 	}
-        else if(isDirectory(backupPath)) //测试备份件是否一个目录
+        else if(isDirectory(backupPath))
         {
 		ERROR(10);
 	}
@@ -40,6 +40,8 @@ int reply(char *sourcePath)
                         	ERROR(9);
         	}
                 if(fileCopy(backupPath,sourcePath))
-                        exit(1);
+                {
+			exit(0);
+		}
         }
 }
