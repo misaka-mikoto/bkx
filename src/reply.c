@@ -20,7 +20,7 @@ int reply(char *sourcePath)
 {
         char *bkDir="/usr/local/share/bkx_backup_directory";
         char *backupPath=varyAdd(sourcePath);
-        printf("Backup Path:%s\nReply Path:%s\n",backupPath,sourcePath);
+        //printf("Backup Path:%s\nReply Path:%s\n",backupPath,sourcePath);
 	if(!isFileExist(backupPath)) //测试备份文件是否存在
         {
 		ERROR(10);
@@ -41,6 +41,6 @@ int reply(char *sourcePath)
                         	ERROR(9);
         	}
                 if(fileCopy(backupPath,sourcePath))
-                        printf("Reply sucess!\n");
+                        //printf("Reply sucess!\n");
         }
 }
